@@ -1,0 +1,343 @@
+Busquedas
+SEO
+SERP
+*****************************************************************************
+site:Dominio
+site:Dominio PalabaClave
+site:Dominio/ruta
+
+site:amp.dev
+amp -amp.dev
+site:amp.dev/about vision
+
+------------------------------------------------------------------
+Directrices básicas de la Búsqueda de Google
+https://developers.google.com/search/docs/essentials?hl=es&visit_id=638247775708983889-2531341134&rd=1
+------------------------------------------------------------------
+BLACK HAT SEO
+GRAY HAT SEO
+WHITE HAT SEO
+------------------------------------------------------------------
+SEMrush Sensor
+MOZCAST
+ALGOROO DEJAN
+
+*****************************************************************************
+				Sección 2 INDEXACIÓN
+------------------------------------------------------------------				
+HOSTING Y DOMINIO PARA SEO
+
+LOCALES
+.mx
+.es
+
+.com/.info/.go
+namecheap
+kinsta
+DigitalOcean
+------------------------------------------------------------------
+VPS VS COMPARTIDO
+
+------------------------------------------------------------------
+CRAWLER
+
+RADIO DE INDEXACIÓN
+
+INDEXADA Y CACHEADA
+
+INDEXADA Y NO CACHEADA (Error 404)
+------------------------------------------------------------------
+
+Google Search Console
+
+Indexación
+conocer los errores
+ver crecimiento SEO
+Monitoreo Variable(Por país, por dispositivo)
+
+Dar de alta:  Prefijo de la URL / Dominio
+
+Prefijo de la URL
+<meta name="google-site-verification" content="">
+agregar antes del </head><body>
+
+Dominio
+google-site-verification=
+Ir a GoDaddy -> DNS -> TXT Record -> @ -> google-site-verification=
+
+------------------------------------------------------------------
+Enviar web a google manualmentes
+
+Google Search Console
+https://tortadebanano.com/receta.html
+solicitar Indexación
+
+en google comprobamos con:
+site:tortadebanano.com/receta.html
+site:tortadebanano.com inurl:receta.html
+modo incongnito.
+------------------------------------------------------------------
+Sitemap.xml y Sitemap html
+
+Sitemap html
+ZONAS
+TIPO DE CONTENIDO
+CATEGORÍA
+
+Sitemap.xml
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xlmns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://www.ejemplo.com</loc>
+		<lastmod>202-04-20</lastmod>
+		<cahngefreq>daily</cahngefreq>
+		<priority>1.0</priority>
+	</url>
+		<url>
+		<loc>https://www.ejemplo.com/blog</loc>
+		<lastmod>202-04-20</lastmod>
+		<cahngefreq>daily</cahngefreq>
+		<priority>1.0</priority>
+	</url>
+</urlset>
+
+Máximo de URLS (No superar las 50,000 urls por archivo)
+
+Sólo canonicals* 
+
+Sitemap en robots.txt (Ruta absoluta del sitemap en el robots.txt)
+
+Enviar sitemap a google (Mediante GSC, así podremos saber a detalle)
+
+Se puede verificar una "instantanea" de la página donde aparece la Versión completa y versión de text en el boton de cache que aparece a un lado de la busqueda.
+------------------------------------------------------------------
+Generador de Sitemaps
+XML-Sitemaps.com
+
+------------------------------------------------------------------
+Robots.txt
+Se pueden poner sitemaps:
+
+------------------------------------------------------------------
+Monitorear Indexación en Google Search Console
+Cobertura
+Error / Validas (hacer click)
+
+En Google Search Console -> Inspección de URLs -> Ver página aprobada
+HTML / captura de pantalla / Más Información
+(Recomendado para arrancar)
+(para sitios más grande conviene por el sitemap)
+
+*****************************************************************************
+				Sección 3 Técnico
+------------------------------------------------------------------				
+CDN y Seguridad		
+	
+Seguridad y contenidos
+
+web.com  ------>  CDN  -------> SERVER -------> México
+
+Servidor: DigitalOcean
+CDN: CLOUDFLARE
+
+------------------------------------------------------------------
+Etiquetas title y descripción
+
+<title>Titulo</tittle>
+<meta name="title" content="Titulo" />
+<meta name="descripcion" content="Descripcion" />
+<meta http-equiv="content-language" content="es" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ejemplo.com" />
+<meta name="author" content="Autor" />
+
+Titulo: 50-60 caracteres
+Descripción: 140-160 caracteres
+
+intitle:ave del paraiso
+------------------------------------------------------------------
+Datos estructurados
+
+https://technicalseo.com/tools/schema-markup-generator/
+https://search.google.com/test/rich-results
+
+<head>
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/"
+}
+</script>
+</head>
+
+
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "Organization",
+		"url": "http://www.ejemplo.com",
+		"name": "Nombre de la empresa",
+		"contactPoint":{
+		   "@type": "Contactpoint",
+		   "telephone": "+1-000-000-0000",
+		   "contactType": "Customer service"
+		}
+	}
+</script>
+
+
+Probar con Google Herramienta de prueba de datos estructurados
+copiar la url
+http://wen.com/receta-paso-a-paso.html
+
+------------------------------------------------------------------
+Optimización de URLS para SEO
+
+https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/
+https://unsplash.com/@giorgiotrovato
+
+<img src="www.ejemplo.com/receta-de-banano.jpg" alt="Receta de Banano">
+
+tinypng.com
+kraken.io
+------------------------------------------------------------------
+Redirecciones para SEO
+
+https://www.seroundtable.com/google-redirect-urls-home-26270.html
+
+tipo	Descripción
+301	Permanente
+302	Temporal
+
+URL VIEJA			URL NUEVA			TIPO
+https://ejemplo.com/		https://ejemplo2.com/		301
+https://ejemplo.com/		https://ejemplo2.com/pronto	302
+https://ejemplo.com/sobre	https://ejemplo2.com/sobre	301
+
+REDIRECCIÓN					PÁGINA FINAL
+https://ejemplo.com   ----->302TEMPORAL---->	https://ejemplo.com/down
+
+httpstatus.io
+ejemplo:
+https://www.eltiempo.com/
+http://www.eltiempo.com/
+https://eltiempo.com/
+http://eltiempo.com/
+
+------------------------------------------------------------------
+URL CANONICAL
+
+https://www.youtube.com/watch?v=-6xqOQDVy-4
+
+web.co/base
+web.co/base-rosa
+web.co/base-negra
+
+web.co/base  (canonical)
+web.co/base-l
+web.co/base-xl
+las variaciones apuntan hacia la canonical.
+
+-Evitar contenido duplicado
+-Calidad de Indexación
+-Evitar Indexar Basura
+
+<head>
+	<link rel="canonical" href="https://tortadebanano.com">
+</head>
+
+independiente si existe el archivo index.html (contenido duplicado)
+https://tortadebanano.com
+https://tortadebanano.com/index.html
+
+<head>
+	<link rel="canonical" href="https://tortadebanano.com/receta.html">
+</head>
+------------------------------------------------------------------
+Google AMP
+
+Paginas moviles aceleradas
+A traves de una canonical (simbolo rayo)
+https://amp.dev/
+
+NO-AMP ------link rel------> AMP
+<link rel="amphtml" href="https://www.ejemplo.com/url/amp/index.html">
+
+NO-AMP <------link rel------- AMP
+<link rel="canonical" href="https://www.ejemplo.com/url/url/index.html">
+
+PROBAR ANTES
+AMP CDN (Mejorar la velocidad por cercanica)
+AMP JS
+NO ES PARA TODA LA INDUSTRIA
+
+------------------------------------------------------------------
+PageSpeed Insights
+Optimizar Google Page Speed y velocidad web
+
+https://pagespeed.web.dev/?utm_source=psi&utm_medium=redirect&hl=es
+https://web.dev/vitals/
+http://css.github.io/csso/csso.html  //PÁGINA PARA MINIFICAR
+
+PESO DE LAS IMAGENES (Pensar en un entorno móvil)
+COMPRIMIR CSS Y JS (Minificar este tipo de archivos)
+VELOCIDAD DE CARGA (entre 1 ~ 3 segundos)
+
+------------------------------------------------------------------
+Critical CSS
+
+first fold (primer fold)
+
+https://web.dev/browser-level-image-lazy-loading/
+https://web.dev/extract-critical-css/
+https://jonassebastianohlsson.com/criticalpathcssgenerator/ generar critical css
+
+------------------------------------------------------------------
+
+*****************************************************************************
+				Sección 4 CONTENIDO
+------------------------------------------------------------------
+Análisis de keywords I
+
+Tamaño de cara al SEO
+Normal 10-20
+Mediano 20-50
+Grande 50-1000
+Enorme más de 1000
+
+Proceso de análisis de Keywords
+Investigar 
+Filtrar ( Volimen(que la gente lo busque) y facilidad de posicionarlo)
+Asignar 
+
+Comprar Reloj Inteligentes (barato)
+landing comercial
+
+
+El mejor relog inteligente (caracteristicas)
+landing informativoa
+
+Volúmen
+cantidad de pesonas que estan buscando las personas
+ej. 20000 busquedas mensuales
+
+Medida para calificar si es facil ó dificil posicionarse en una consulta
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+*****************************************************************************
