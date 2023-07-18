@@ -323,14 +323,63 @@ ej. 20000 busquedas mensuales
 Medida para calificar si es facil ó dificil posicionarse en una consulta
 
 ------------------------------------------------------------------
+Análisis de keywords II
+
+keyword Tool
+https://keywordtool.io/es
+https://answerthepublic.com/
+https:/es.semrush.com/partner/jorgejaramillo/
+https://kwfinder.com/
+
+Finalidad:
+listar (Tener un repositorio de palabras)
+saber el share (estado de participación en busquedas)
+seguir competencia (conocer quiénes aparecen en las consultas)
 
 ------------------------------------------------------------------
+Clase Práctica de Análisis de Keywords
+
+Keyword		Volumen		Dificutad		Tipo de contenido	slug
+
+
+
+*Recopilar ideas del buscador	
+habilitar: Otras Personas tambien buscaron. etrando a una pagina y regresando.
+
+En keywordtool.io colocar busqueda
+
+soovle.com
+https://answerthepublic.com/ *
+https://kwfinder.com/ *
 
 ------------------------------------------------------------------
+Análisis de keywords inverso
+
+-Títulos
+-Longitus de textos
+-url
+-Enlaces entrantes
+
+-En el contenido (Buscar palabras utilizadas y cómo lo hacen)
+-Títulos, urls, descripciones (comando Intitle  o Inurl)
+-otros canales (You tube, slide)
+
+site:ejemplo.com australia
+buscar en https://kwfinder.com/ por ejemplo
 
 ------------------------------------------------------------------
+Optimización de títulos para SEO
+
+<title>Titulo</tittle>
+<meta name="title" content="Titulo" />
+
+<title>Agencia SEO en Madrid, España.</tittle>
+<meta name="title" content="Agencia SEO en Madrid, España" />
 
 ------------------------------------------------------------------
+Clase práctica de Títulos para SEO
+
+https://www.youtube.com/watch?v=1ZCziCzvLL0
 
 ------------------------------------------------------------------
 
