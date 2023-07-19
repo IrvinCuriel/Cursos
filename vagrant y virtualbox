@@ -1,0 +1,220 @@
+doas shutdown -hp now
+
+**************************************************************************
+INSTALAR VAGRANT
+
+Tutorial instalar Vagrant para usar ambientes virtuales en GNU/Linux
+https://fortinux.gitbooks.io/humble_tips/content/capitulo_1_usando_aplicaciones_en_linux/tutorial_instalar_vagrant_para_usar_ambientes_virtuales_en_gnulinux.html
+
+Vagrant: Instalación, configuración y ejemplos de uso
+https://www.redeszone.net/tutoriales/servidores/vagrant-instalacion-configuracion-ejemplos/
+
+https://www.vagrantup.com/downloads
+https://www.vagrantup.com/docs/cli/ssh
+
+Vagrant – 4. Iniciar y detener máquinas virtuales
+https://www.youtube.com/watch?v=7zu6lQDdC_k
+
+**************************************************************************
+INSTALAR VIRTUALBOX
+
+sudo apt-get install virtualbox
+1791  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+1792  sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+1793  sudo apt-get update && sudo apt-get install vagrant
+
+Virtual Box y Vagrant 
+https://www.genbeta.com/desarrollo/virtual-box-y-vagrant
+
+**************************************************************************
+HOMESTEAD
+
+Installing Homestead
+https://laravel.com/docs/8.x/homestead#first-steps
+https://styde.net/laravel-6-doc-homestead/
+https://styde.net/instalacion-y-configuracion-de-laravel-homestead/
+
+para ver realeses:
+https://github.com/laravel/homestead
+
+git clone https://github.com/laravel/homestead.git ~/Homestead
+
+
+**************************************************************************
+DESINTALAR VIRTUAL BOX
+
+ 1823  sudo apt-get remove --purge virtualbox*
+ 1824  clear
+ 1825  sudo rm ~/"VirtualBox VMs" -Rf
+ 1826  sudo rm ~/.config/VirtualBox/ -Rf
+ 
+ 1828  sudo apt-get install virtualbox
+ 
+ 1833  vboxmanage --version
+ 1834  vagrant --version
+ 
+ 1838  sudo apt-get remove --purge virtualbox*
+ 1839  sudo apt-get remove virtualbox-\*
+ 1840  sudo apt-get purge virtualbox-\*
+ 1841  vboxmanage --version
+ 
+ 1848  vagrant global-status
+ 1849  vagrant destroy b5b01ae
+ 
+**************************************************************************
+INTEGRAR BOX
+
+1818  vagrant box add dictec-box package.box
+1819  vagrant init dictec-box
+1820  vagrant up
+**************************************************************************
+HOSTS
+
+sudo nano /etc/hosts
+192.168.56.56   homestead.test
+
+
+**************************************************************************
+SSH
+
+ssh-keygen -t rsa -b 4096 -C "irvin.curiel@sandox.com.mx"
+**************************************************************************
+CURSO
+
+cd~
+git clone https://github.com/laravel/homestead.git Homestead
+
+cd Homestead/
+bash init.sh
+
+** dentro de Homestead->resources se encuentra Homestead.yalm y lo cambia a la carpeta Homstead 
+nano Homestead.yaml
+
+--------------------------------------------
+vagrant box add laravel/homestead
+---------------------------------------------
+cd~
+git clone https://github.com/laravel/homestead.git Homestead
+cd Homestead/
+bash init.sh
+n
+n
+cd ~
+cd .homestead/
+ls
+** se ve el archivo Homestead.yaml
+rm -rf .homestead/
+cd Homestead/
+bash init.sh
+Homestead initialized!!
+
+cd ..
+cd .homestead/
+ls
+** se ve el archivo Homestead.yaml
+nano Homestead.yaml
+
+sites:
+    - map: homestead.test
+      to: /home/vagrant/project1/public
+      
+sites:
+    - map: homestead.app
+      to: /home/vagrant/Code/homestead/public
+     
+authorize: ~/.ssh/id_rsa.pub   
+keys:
+- ~/.ssh/id_rsa
+
+
+folders:
+    - map: ~/code/project1   **NO TOCAR
+      to: /home/vagrant/project1 **NO TOCAR
+      
+-------------------------------------------------
+REFRESH
+cd ..
+cd Homestead/
+vagrant up
+
+cd ..
+mkdir Code
+cd ..
+cd Homestead/
+vagrant up
+
+-------------------------------------------------
+-------------------------------------------------
+
+cd ~
+cd Homestead/vagrant up
+
+ssh crear
+ssh-keygen -t rsa
+aprece algo como /User/irvin/.ssh/id_rsa
+Overwrite (n)
+
+-------------------------------------------------
+-------------------------------------------------
+
+yalm
+host
+vagrant provision
+composer create-project laravel/laravel=^7 ejerciciolaravel --prefer-dist
+vagrant ssh
+dentro de esta maquina
+laravel new demo
+
+**************************************************************************
+METADATA
+
+vagrant box add metadata.json
+
+No se pudo encontrar la caja 'laravel / Homestead'
+https://www.it-swarm-es.com/es/laravel/no-se-pudo-encontrar-la-caja-laravel-homestead/822739737/
+https://superuser.com/questions/810071/is-there-a-way-for-vagrant-to-import-a-local-box-file-with-a-specified-version
+
+BOX REMOVE
+https://laracasts.com/discuss/channels/general-discussion/delete-vagrant-box
+
+-----------------------------------------------
+en boxdos
+vagrant box list
+box-dictec (virtualbox, 0)
+box-dictec (virtualbox, 0.4.0)
+vagrant box remove box-dictec --box-version=0.4.0
+vagrant box list
+vagrant box add metadata.json
+vagrant box list
+box-dictec (virtualbox, 0)
+box-dictec (virtualbox, 0.4.0)
+
+-----------------------------------------------------
+
+VagrantFile
+https://javiermartinalonso.github.io/devops/devops/vagrant/2018/02/09/vagrant-vagrantfile.html
+
+
+**************************************************************************
+¿Qué hacer después de clonar un proyecto de Laravel?
+https://parzibyte.me/blog/2017/05/29/hacer-despues-clonar-proyecto-laravel/
+composer install
+Crear el archivo .env
+php artisan key:generate
+php artisan serve
+**************************************************************************
+Instala phpMyAdmin en Laravel Homestead
+https://styde.net/instala-phpmyadmin-en-laravel-homestead/
+
+sudo systemctl start mysql
+sudo systemctl enable mysql
+rm /etc/systemd/system/mariadb.service
+
+sudo systemctl stop mysql.service
+
+Laravel Homestead en GNU/Linux #7: Instalar phpMyAdmin en laravel homestead **(SE USO ESTE)
+https://www.youtube.com/watch?v=f0sEkkEfhJI
+Nota: instalar sin apt: sudo apt install phpmyadmin
+
+
+**************************************************************************

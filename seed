@@ -1,0 +1,1336 @@
+**************************************************************************
+¿Qué hacer después de clonar un proyecto de Laravel?
+https://parzibyte.me/blog/2017/05/29/hacer-despues-clonar-proyecto-laravel/
+composer install
+Crear el archivo .env
+php artisan key:generate
+php artisan serve
+**************************************************************************
+  
+  php artisan make:migration create_likes_receta_pivot_table --create likes_receta
+  2014_10_12_000000_create_users_table
+  php artisan make:migration create_cotizaciones_table
+  php artisan make:migration create_plan_tipos_table
+  php artisan make:migration create_plan_personas_table
+  php artisan make:migration create_planes_table
+  php artisan make:migration create_precios_x_planes_table
+  php artisan make:migration create_proyectos_fases_table
+  php artisan make:migration create_tipo_beneficiarios_table
+  php artisan make:migration create_proyectos_x_beneficiarios_table
+  php artisan make:migration activacion_licencias_table
+  php artisan make:migration cotizacion_estatus_table
+  php artisan make:migration cotizacion_tracking_table
+  
+
+  php artisan make:model Cliente -mcr (EN SINGULAR)
+  php artisan make:model Actividad_categoria -mcr
+  php artisan make:model Actividade -mcr
+  php artisan make:model Precio -mcr
+  php artisan make:model Deporte -mcr
+  php artisan make:model Evento -mcr
+  php artisan make:model Evento -mcr
+  php artisan make:model Servicio_google -mcr
+  
+  php artisan make:model DetallePedido -mcr
+  php artisan make:model Producto -mcr
+  php artisan make:model Pedido -mcr
+  php artisan make:model  -mcr
+  
+  php artisan make:model Calendario -mcr
+  php artisan make:model Calendarios_x_usuario -mcr
+
+  
+  php artisan make:model Precios_x_plan
+  php artisan make:model Precios_x_tipo
+  php artisan make:model Moneda
+  php artisan make:model Cotizacion
+  php artisan make:model Tipo_Cliente
+  php artisan make:model Representante
+  php artisan make:model Cotizacion_estatus
+  php artisan make:model Cotizacion_tracking
+  
+  php artisan make:model Cliente --migration
+  php artisan make:model Empresa --migration
+  php artisan make:model Persona --migration
+  php artisan make:model Tipo_enfoque --migration
+  php artisan make:model Participante --migration
+  php artisan make:model Enfoque --migration
+  php artisan make:model Participantes_entrevista --migration
+  php artisan make:model Notificacion_x_Proyecto --migration
+  php artisan make:model Cotizacion_proceso --migration
+  php artisan make:model Cotizacion_estatu --migration
+  php artisan make:model Cotizacion_tracking --migration
+  php artisan make:model Cotizacion_nota --migration
+  php artisan make:model Servicio_agendas_x_participante --migration
+  php artisan make:model Unidade --migration
+  php artisan make:model Attendee --migration
+  php artisan make:model Plan_pagos_x_participante --migration
+  php artisan make:model Clasificacion_movimiento --migration
+  php artisan make:model Subclasificacion_movimiento --migration
+  php artisan make:model Movimientos_x_subclasificacione --migration
+
+	php artisan make:seeder Actividad_categoriasSeed
+	php artisan make:seeder ActividadesSeed
+	php artisan make:seeder PreciosSeed
+	php artisan make:seeder MonedasSeed
+	php artisan make:seeder Precio_tiposSeed
+	php artisan make:seeder Tipo_clientesSeed
+	php artisan make:seeder Tipo_eventosSeed
+	php artisan make:seeder Calendario_eventosSeed
+	php artisan make:seeder Eventos_x_participantesSeed
+	php artisan make:seeder Precios_usdSeed
+	php artisan make:seeder Precios_usdSeeder
+	php artisan make:seeder Aplica_servicios_mes_ActividadesSeeder
+	php artisan make:seeder Actualizar_tabla_precios_x_mesSeeder
+	php artisan make:seeder Cotizacion_estatusSeeder
+	php artisan make:seeder Actualizar_id_cotizacion_tracking_en_tabla_cotizacionesSeeder
+	php artisan make:seeder Cotizacion_procesosSeeder
+	php artisan make:seeder Cotizacion_trackingSeeder
+        php artisan make:seeder Actualzar_id_precio_tipo_en_tabla_cotizacionesSeeder
+        php artisan make:seeder UnidadesSeeder
+        php artisan make:seeder Calendario_x_UsuarioSeeder
+        php artisan make:seeder Actualizar_tabla_serviciosSeeder
+        php artisan make:seeder ClientesSeeder
+	
+
+php artisan make:controller cuentas_por_cobrar_controller
+php artisan make:controller viaticos_controller
+php artisan make:controller control_de_sesiones_controller
+php artisan make:controller ingresos_y_egresos_controller
+
+php artisan make:migration add_delete_flag --table=roles_x_personas
+php artisan make:migration add_estatus --table=cotizaciones
+php artisan make:migration add_tipo_proyecto --table=clientes
+php artisan make:migration add_id_deporte --table=enfoque_personas
+php artisan make:migration add_estatus_plan --table=planes
+php artisan make:migration add_duracion --table=cotizaciones
+php artisan make:migration nomenclatura_enfoque --table=tipo_enfoques
+php artisan make:migration add_aplicar_iva --table=planes
+php artisan make:migration add_aplica_servicios_mes --table=actividades
+php artisan make:migration add_aplica_servicios_mes_to_precios_x_planes --table=precios_x_planes
+php artisan make:migration add_id_cotizacion_tracking_to_cotizaciones --table=cotizaciones
+php artisan make:migration add_num_personas_to_cotizaciones --table=cotizaciones
+php artisan make:migration add_id_precio_tipo_to_cotizaciones --table=cotizaciones
+php artisan make:migration add_codigo_internacional_to_personas --table=personas
+php artisan make:migration add_iso2_to_personas --table=personas
+php artisan make:migration add_columnas_to_servicio_agendas --table=servicio_agendas
+php artisan make:migration add_id_persona_to_servicios --table=servicios
+php artisan make:migration add_tiempo_impartido_to_servicio_agendas --table=servicio_agendas
+php artisan make:migration add_ultimo_estatus_agenda_to_servicios --table=servicios
+php artisan make:migration add_unidades_to_precios_x_planes --table=precios_x_planes
+php artisan make:migration add_columnas_to_servicio_partes --table=servicio_partes
+php artisan make:migration add_archivo_nota --table=cotizacion_notas
+php artisan make:migration add_id_servicio_google_to_servicio_agendas_x_participantes --table=servicio_agendas_x_participantes
+php artisan make:migration add_titulo_to_servicio_partes --table=servicio_partes
+php artisan make:migration add_titulo_to_servicio_agendas --table=servicio_agendas
+php artisan make:migration add_columnas_to_calendarios --table=calendarios
+php artisan make:migration add_categorias_idcategorias_to_calendarios --table=calendarios
+php artisan make:migration add_clase_to_calendarios --table=calendarios
+php artisan make:migration add_tipo_servicio_to_cotizaciones --table=cotizaciones
+php artisan make:migration add_referencias_to_cotizaciones --table=cotizaciones
+php artisan make:migration add_referencias_to_plan_pagos --table=plan_pagos
+php artisan make:migration add_categoria_to_servicios --table=servicios
+php artisan make:migration add_tipo_to_servicio_agendas --table=servicio_agendas
+php artisan make:migration add_fk_id_subclasificacion_movimiento --table=subclasificacion_movimientos
+
+composer require doctrine/dbal
+php artisan make:migration change_amaterno_nullable_on_personas_table --table=personas
+php artisan make:migration change_enfoque_nullable_on_enfoque_personas_table --table=enfoque_personas
+php artisan make:migration change_campos_nullable_on_entrevista_personas_table --table=entrevista_personas
+php artisan make:migration change_telefono_nullable_on_personas_table --table=personas
+php artisan make:migration change_id_servicio_nullable_on_servicio_agendas --table=servicio_agendas
+
+            $table->string('nombre')->nullable()->change();
+            $table->string('nivel')->nullable()->change();
+            $table->string('area')->nullable()->change();
+
+            $table->string('nombre')->nullable(false)->change();
+            $table->string('nivel')->nullable(false)->change();
+            $table->string('area')->nullable(false)->change();
+            
+	composer require doctrine/dbal:^2.12.1
+	
+php artisan make:migration change_confirmacion_necesidad_to_text_on_entrevista_personas --table=entrevista_personas
+$table->text('text')->change();
+php artisan make:migration change_id_servicio_google_to_cascade_on_servicio_agendas_x_participantes --table=servicio_agendas_x_participantes
+php artisan make:migration change_id_evento_to_cascade_on_servicio_agendas --table=servicio_agendas
+php artisan make:migration change_id_evento_to_cascade_on_eventos --table=eventos
+
+How to Update Column to Nullable in Laravel Migration 
+https://postsrc.com/code-snippets/how-to-update-column-to-nullable-in-laravel-migration
+
+
+**************************************************************************************************************
+Join con Laravel: unión de tablas SQL
+https://parzibyte.me/blog/2020/02/10/join-laravel-union-tablas-sql/
+<?php
+$resultado = Modelo::join("tabla_externa","tabla_externa.clave_foranea", "=", "modelo.clave")
+->select("columna1", "columna2", ...)
+->get();
+
+**************************************************************************************************************
+composer dump-autoload
+
+ 2016  php artisan db:wipe
+ 2017  php artisan migrate:fresh
+ 2018  php artisan migrate
+ 2019  php artisan db:seed
+ 
+ php artisan migrate:rollback
+ https://stackoverflow.com/questions/16871413/safely-remove-migration-in-laravel
+ 
+ php artisan migrate:refresh --path=/database/migrations/2022_11_10_010846_create_servicio__agendas_table.php
+ php artisan migrate:refresh --path=/database/migrations/2022_12_10_003231_create_eventos_table.php
+ php artisan migrate:refresh --path=/database/migrations/2022_12_10_003436_add_columnas_to_servicio_agendas.php
+ php artisan migrate:refresh --path=/database/migrations/2022_12_30_003632_add_columnas_to_servicio_partes.php
+ php artisan migrate:refresh --path=/database/migrations/2023_01_20_234321_create_servicio_googles_table.php
+ 
+ 
+ //PARCIALES (eliminados y crear de nuevo)
+ composer dump-autoload
+ php artisan migrate --path=/database/migrations/2022_12_29_184921_create_unidades_table.php
+ php artisan db:seed --class=UnidadesSeeder
+ php artisan migrate --path=/database/migrations/2022_12_29_191817_add_unidades_to_precios_x_planes.php
+ php artisan migrate --path=/database/migrations/2022_12_30_003632_add_columnas_to_servicio_partes.php
+ php artisan migrate --path=/database/migrations/2023_03_02_224416_create_clasificacion_movimientos_table.php
+ 
+ composer dump-autoload
+ php artisan db:seed --class=Precios_usdSeeder
+ php artisan db:seed --class=Aplica_servicios_mes_ActividadesSeeder
+ php artisan db:seed --class=Actualizar_tabla_precios_x_mesSeeder
+ php artisan db:seed --class=Cotizacion_procesosSeeder
+ php artisan db:seed --class=Cotizacion_estatusSeeder
+ php artisan db:seed --class=Actualzar_id_precio_tipo_en_tabla_cotizacionesSeeder
+ php artisan db:seed --class=Cotizacion_trackingSeeder
+ php artisan db:seed --class=UnidadesSeeder
+ php artisan db:seed --class=Calendario_x_UsuarioSeeder
+ php artisan db:seed --class=PlanTipoMovimientoSeeder
+ php artisan db:seed --class=CondicionPagoSeeder
+ php artisan db:seed --class=TipoCuentaBancoSeeder
+ php artisan db:seed --class=Actualizar_tabla_serviciosSeeder
+ php artisan db:seed --class=ClasificacionPlanMovSeeder
+ 
+
+use Database\Seeders\Precios_usdSeeder;
+use Database\Seeders\Aplica_servicios_mes_ActividadesSeeder;
+use Database\Seeders\Actualizar_tabla_precios_x_mesSeeder;
+use Database\Seeders\Cotizacion_estatusSeed;
+use Database\Seeders\Actualizar_id_cotizacion_tracking_en_tabla_cotizacionesSeeder;
+//$this->call(Precios_usdSeeder::class);
+//$this->call(Aplica_servicios_mes_ActividadesSeeder::class);
+//$this->call(Actualizar_tabla_precios_x_mesSeeder::class);
+//$this->call(Cotizacion_estatusSeeder::class);
+//$this->call(Actualizar_id_cotizacion_tracking_en_tabla_cotizacionesSeeder::class);
+
+
+
+https://stackoverflow.com/questions/26143315/laravel-5-artisan-seed-reflectionexception-class-songstableseeder-does-not-e
+
+https://laravel.com/docs/9.x/seeding
+
+
+**************************************************************************************************************
+bootstrap
+https://uniwebsidad.com/static/libros/ejemplos/bootstrap-3/ejemplo-2-1.html
+
+**************************************************************************************************************
+
+International Telephone Input
+https://packagist.org/packages/jackocnr/intl-tel-input
+https://codepen.io/jackocnr/pen/EyPXed
+https://github.com/jackocnr/intl-tel-input/issues/991
+https://codepen.io/jackocnr/pen/yehvE
+https://www.youtube.com/watch?v=UAElmxSEcx4
+
+How to get iti__dial-code in intl-tel-input?
+https://stackoverflow.com/questions/64782674/how-to-get-iti-dial-code-in-intl-tel-input
+
+**************************************************************************************************************
+Bootstrap 4 form wizard using jquery steps 
+https://bbbootstrap.com/snippets/form-wizard-using-jquery-steps-88897668
+
+jQuery wizard steps move before ajax call completed
+https://stackoverflow.com/questions/20203037/jquery-wizard-steps-move-before-ajax-call-completed/34901580
+
+jQuery Steps
+http://www.jquery-steps.com/examples#tabs
+
+**************************************************************************************************************
+Javascript - foreach y todo sobre los bucles js
+https://codingpotions.com/javascript-foreach-bucles
+
+Eliminar elemento con jQuery
+https://tutobasico.com/eliminar-elemento-con-jquery/
+**************************************************************************************************************
+¿Enviar parámetro a Bootstrap ventana modal?
+https://www.it-swarm-es.com/es/jquery/enviar-parametro-bootstrap-ventana-modal/1046993719/
+
+//$('#anexos_programa_modal').hide();
+//$('#anexos_programa_modal').modal('toggle');
+//$('#anexos_programa_modal').modal().hide();
+//this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+$("[data-dismiss=modal]").trigger({ type: "click" });
+
+
+How to do Modal Bootstrap appear on bottom
+<div class="modal-dialog modal-dialog-centered" style="align-items: flex-end;">
+https://stackoverflow.com/questions/34977785/how-to-do-modal-bootstrap-appear-on-bottom
+**************************************************************************************************************
+
+https://developers.google.com/maps/documentation?hl=es
+
+https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=es#getting_started
+https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=es#step_3_get_an_api_key
+
+
+Cómo obtener la latitud y longitud de un pin que se puede arrastrar a través de Google Maps 
+https://estradawebgroup.com/Post/Como-obtener-la-latitud-y-longitud-de-un-pin-que-se-puede-arrastrar-a-traves-de-Google-Maps/4246
+
+Make a marker draggable
+https://developers.google.com/maps/documentation/javascript/markers?hl=es-419#draggable
+
+Markers
+https://developers.google.com/maps/documentation/javascript/markers#introduction
+
+Markers with Image Icons
+https://developers.google.com/maps/documentation/javascript/examples/icon-simple#maps_icon_simple-javascript
+
+Marker Accessibility
+https://developers.google.com/maps/documentation/javascript/examples/marker-accessibility}
+
+AGREGAR VINCULO
+Tutorial de Google Maps - Colocar Marcador y Ventana de información
+https://www.youtube.com/watch?v=wojRZzru49o
+
+Example: Map and Marker Events
+https://developers.google.com/maps/documentation/javascript/events#MarkerEvents
+
+Codificación geográfica inversa (búsqueda de direcciones) *
+https://developers-google-com.translate.goog/maps/documentation/javascript/geocoding?hl=es&_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es-419#ReverseGeocoding
+
+Example of reverse geocoding
+https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding?hl=es#reverse-example
+
+https://developers-google-com.translate.goog/maps/documentation/javascript/examples/geocoding-reverse?hl=es&_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es-419 **USADO
+
+Geocoding API requests and responses
+https://developers.google.com/maps/documentation/geocoding/requests-geocoding?hl=es#request
+
+***************************************************************  
+
+Cómo limitar el tamaño de carga de archivos en NGINX 
+https://tecnotraffic.net/como-limitar-el-tamano-de-carga-de-archivos-en-nginx-para-mitigar-los-ataques-dos/
+
+1474  sudo nano /etc/nginx/nginx.conf
+1475  sudo cat /etc/nginx/nginx.conf
+1476  sudo nano /etc/nginx/sites-available/homestead.test
+1477  sudo cat /etc/nginx/sites-available/homestead.test
+sudo nginx -t
+sudo systemctl restart nginx
+
+Carga de archivos grandes: la solicitud se cancela
+https://www.it-swarm-es.com/es/dropzone.js/carga-de-archivos-grandes-la-solicitud-se-cancela/831780696/
+***************************************************************  
+
+Eliminar el hijo indicado del DOM con removeChild, en javaScript 
+https://altruistas.org/eliminar-el-hijo-indicado-del-dom-con-removechild-en-javascript/ 
+
+***************************************************************
+window.location.reload();
+location.reload();
+
+https://www.delftstack.com/howto/javascript/javascript-redirect/#javascript-redirect-a-webpage-with-location.replace
+Redirect to a Webpage in JavaScript
+JavaScript Redirect a WebPage With location.href()
+JavaScript Redirect a WebPage With location.replace()
+JavaScript Redirect a WebPage With location.assign()
+***************************************************************
+https://www.it-swarm-es.com/es/php/laravel-419-error-problema-verifycsrftoken/807002814/
+Laravel 419 Error - Problema VerifyCsrfToken
+
+https://www.latirus.com/blog/2020/11/01/storage-link-en-hosting-compartido-laravel-symlink/
+Como usar Storage:link en un Hosting Compartido Laravel 
+
+***************************************************************
+https://www.delftstack.com/es/howto/php/how-to-convert-string-to-date-and-date-time-using-php/
+Cómo convertir una cadena a fecha y hora en PHP
+
+gettype
+https://www.php.net/manual/es/function.gettype.php
+
+***************************************************************
+Dar formato a un número como una cadena de moneda en JavaScript
+https://www.delftstack.com/es/howto/javascript/javascript-currency-format/
+
+Bootstrap TouchSpin
+http://res.wisedu.com/ver/next/bower_components/bootstrap-touchspin/demo/
+
+Convertir Cadena a Float en PHP
+https://www.delftstack.com/es/howto/php/php-string-to-float/
+***************************************************************
+https://mdbootstrap.com/snippets/jquery/mdbootstrap/945017
+
+toastr.error
+
+***************************************************************
+
+How to open specific tab of bootstrap nav tabs on click of a particuler link using jQuery?
+https://stackoverflow.com/questions/19589053/how-to-open-specific-tab-of-bootstrap-nav-tabs-on-click-of-a-particuler-link-usi
+
+***********************************************************************************
+
+127.0.0.1/proyectos-laravel/laravelpwa/public
+127.0.0.1/proyectos-laravel/laravelpwa/public/
+localhost/proyectos-laravel/laravelpwa/public/
+localhost/proyectos-laravel/laravelpwa/public/index.php
+
+127.0.0.1/proyectos-laravel/laravelpwa/public/api/mensajes
+127.0.0.1/proyectos-laravel/laravelpwa/public/api/categoriasApi
+127.0.0.1/proyectos-laravel/laravelpwa/public/categorias
+
+
+***********************************************************************************
+https://parzibyte.me/blog/2019/02/20/rutas-laravel-parte-2-prefijos-fallback-limite-de-tasa-formularios/
+
+php # Línea para que gist marque la sintaxis
+Route::fallback(function () {
+
+***********************************************************************************
+https://github.com/silviolleite/laravel-pwa/issues/49
+https://laravelquestions.com/2021/04/27/pwa-cache-for-offline-mode-is-not-working-correctly/
+***********************************************************************************
+REST APIs i18n con Laravel - Parte 18 (Uso de Postman para "test" de end-points)
+https://www.youtube.com/watch?v=OOG_E-It21Q&list=PLSUqL2t8VZCqhzYwtvGBriFx-MMfXW7UY&index=18
+***********************************************************************************
+https://www.youtube.com/watch?v=z3tzEreQ2lo
+     
+***********************************************************************************
+excel
+https://docs.laravel-excel.com/3.1/getting-started/installation.html
+https://www.youtube.com/watch?v=2_ieEV9_GC4
+***********************************************************************************
+Agrupaciones JAvaScript
+
+JavaScript - Ejercicio 875: Definir Función para Agrupar Elementos Según una Operación Específica
+https://www.youtube.com/watch?v=yVJDjpL1rNU
+
+Agregar valores al objeto en JavaScript
+https://www.delftstack.com/es/howto/javascript/javascript-append-to-object/
+
+5 maneras de iterar un objeto en JavaScript 
+https://dev.to/duxtech/5-maneras-de-iterar-un-objeto-en-javascript-jkn
+
+
+***********************************************************************************
+https://stackoverflow.com/questions/32549221/convert-string-to-carbon/32559513
+
+$nueva = Carbon::parse($comienzo)->format();
+                    return $nueva;
+                    
+https://www.itsolutionstuff.com/post/laravel-carbon-convert-string-to-date-exampleexample.html
+
+https://laracasts.com/discuss/channels/laravel/convert-time-to-timestamp
+$timestamp = \Carbon\Carbon::createFromFormat('Y/m/d', '2016/05/05')->timestamp;
+
+https://www.php.net/manual/es/datetime.createfromformat.php
+$eventDate = DateTime::createFromFormat('m/d/y h:i', '02/26/11 08:00', new DateTimeZone('Europe/Warsaw'));
+echo date_format($eventDate, 'Y-m-d'); //prints "2011-02-26"
+***********************************************************************************
+
+https://laracasts.com/discuss/channels/laravel/redirect-to-login-page-expiration-due-to-inactivity
+redirect to login page expiration due to inactivity
+
+How To Work with Session Timeout in Laravel 8
+https://www.positronx.io/how-to-set-or-increase-session-lifetime-in-laravel/
+https://onlinewebtutorblog.com/how-to-work-with-session-timeout-in-laravel-8/
+
+***********************************************************************************
+How can I convert an image into Base64 string using JavaScript?
+https://stackoverflow.com/questions/6150289/how-can-i-convert-an-image-into-base64-string-using-javascript
+
+Storing (and Retrieving) Photos in IndexedDB
+https://www.raymondcamden.com/2018/10/05/storing-retrieving-photos-in-indexeddb
+
+Convert Base64 string to an image file? [duplicate]
+https://stackoverflow.com/questions/15153776/convert-base64-string-to-an-image-file
+
+Base 64 a imagen usando PHP
+https://parzibyte.me/blog/2019/08/09/php-convertir-base64-imagen/
+
+convertir de base64 a jpg en php
+
+
+***********************************************************************************
+PWA Manifest Generator
+https://www.simicart.com/manifest-generator.html/
+
+The Web App Manifest is a JSON doc
+https://app-manifest.firebaseapp.com/
+
+The Web App Manifest is a JSON doc
+https://manifest-gen.netlify.app/
+
+***********************************************************************************
+How to add data-attributes to a Bootstrap Treeview?
+https://stackoverflow.com/questions/33754996/how-to-add-data-attributes-to-a-bootstrap-treeview
+***********************************************************************************
+How to set selected value on select using selectpicker plugin from bootstrap
+https://stackoverflow.com/questions/14804253/how-to-set-selected-value-on-select-using-selectpicker-plugin-from-bootstrap
+
+***********************************************************************************
+Datatables
+
+Javascript sourced data
+https://datatables.net/examples/data_sources/js_array
+
+CREAR UN DATATABLE CON JAVASCRIPT DESDE CERO
+https://www.youtube.com/watch?v=jD3T5_xrRJM
+
+Warning: Cannot reinitialise D
+https://datatables.net/manual/tech-notes/3
+
+Datatables warning(table id = 'example'): cannot reinitialise data table
+https://stackoverflow.com/questions/13708781/datatables-warningtable-id-example-cannot-reinitialise-data-table
+
+Search the table using a custom input:
+https://datatables.net/reference/api/search()
+
+ DATATABLES JQUERY 06: Agregar botones de acción y funciones obtener data
+https://www.youtube.com/watch?v=mV6L4_Mwh3U
+
+Add rows
+https://datatables.net/examples/api/add_row.html
+
+
+jQuery DataTables: el control personalizado no funciona en la segunda página y después
+https://www-gyrocode-com.translate.goog/articles/jquery-datatables-custom-control-does-not-work-on-second-page/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp
+
+
+datatables - Tablas de datos: cambie el color de la celda según los valores 
+https://code-examples.net/es/q/2726b76
+https://jsfiddle.net/Lr77dgmt/76/
+
+
+hacer que aparezca el color de mi celda del dataTable en mi hoja de excel cuando le doy imprimir
+johander
+https://datatables.net/forums/discussion/60957/hacer-que-aparezca-el-color-de-mi-celda-del-datatable-en-mi-hoja-de-excel-cuando-le-doy-imprimir
+
+DATATABLES JQUERY 05: Como reinicializar | How reinitialise
+https://www.youtube.com/watch?v=tnA2yc47gxg
+
+***********************************************************************************
+setTimeout()
+https://www.freecodecamp.org/espanol/news/javascript-settimeout-como-establecer-un-temporizador-en-javascript-o-esperar-durantante-n-segundos/
+***********************************************************************************
+https://laravel.com/docs/7.x/authentication#included-routing
+
+
+login.blade ===> action="{{ route('login') }}" 
+web.php ===> Auth::routes();
+vendor/laravel/ui/src/AuthRouteMethods.php ===>  $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+LoginController.php ===> protected $redirectTo = RouteServiceProvider::HOME;
+RouteServiceProvider ===> public const HOME = '/home';
+
+https://desarrolloweb.com/articulos/cambiar-rutas-login-laravel.html
+Modificar las rutas predeterminadas 
+
+***********************************************************************************
+
+Modificar tablas ya existentes con las migraciones de Laravel
+https://styde.net/modificar-tablas-ya-existentes-con-las-migraciones-de-laravel/
+php artisan migrate
+
+***********************************************************************************
+OnClick event doesn't work in Chrome
+https://stackoverflow.com/questions/29056379/onclick-event-doesnt-work-in-chrome
+
+EJECUTAR JAVASCRIPT CUANDO SELECCIONE UN VALOR DEL <SELECT>
+https://es.stackoverflow.com/questions/234294/ejecutar-javascript-cuando-seleccione-un-valor-del-select
+
+¿Cómo puedo convertir un string JSON a un objeto en JavaScript?
+https://es.stackoverflow.com/questions/1648/c%C3%B3mo-puedo-convertir-un-string-json-a-un-objeto-en-javascript
+
+***********************************************************************************
+
+jQuery class transition animation
+https://www.youtube.com/watch?v=BfH5aeeZvh0
+
+
+trying to give transition to addClass not working...why???
+https://forum.jquery.com/topic/trying-to-give-transition-to-addclass-not-working-why
+*********************************************
+
+
+merge changes
+incoming
+luego el +
+lego ctrl + enter
+luego hacer el push
+
+stage chenges    
+
+*********************************************
+Escribiendo mailables
+php artisan make:mail OrderShipped
+https://styde.net/laravel-6-doc-correos-electronicos/#generating-mailables
+
+php artisan make:mail BEOPMail
+php artisan make:mail InformesSupervisionMail
+php artisan make:mail EventoMail
+php artisan make:mail LicenciaMail
+
+Connect to Internet E-Mail (POP, IMAP, SMTP) through easy-to-use, bi-directional drivers.
+https://www.cdata.com/drivers/email/
+
+5 Different Types of Email Encryption
+https://blog.rsisecurity.com/5-different-types-of-email-encryption/
+
+Embedding images in mails
+https://laracasts.com/discuss/channels/laravel/embedding-images-in-mails
+
+*********************************************
+¿En qué se diferencian width, max-width y min-width? 
+https://dev.to/thedavos/en-que-se-diferencian-width-max-width-y-min-width-497a
+
+https://stackoverflow-com.translate.goog/questions/19392462/responsive-jquery-steps?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp
+
+Responsive jquery-steps
+https://stackoverflow.com/questions/19392462/responsive-jquery-steps/
+
+*********************************************
+Full
+
+https://fullcalendar.io/docs/initialize-globals
+
+https://fullcalendar-io.translate.goog/docs/v4/initialize-es6?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp
+
+Docs Event Dragging & Resizing 
+https://fullcalendar.io/docs/event-dragging-resizing
+
+eventDrop 
+https://fullcalendar.io/docs/eventDrop
+
+eventDrop 
+https://fullcalendar.io/docs/v3/eventDrop
+function( event, delta, revertFunc, jsEvent, ui, view ) { }
+https://stackoverflow.com/questions/7251471/is-there-a-revert-function-for-fullcalendar
+
+eventResize 
+function( event, delta, revertFunc, jsEvent, ui, view ) { }
+https://fullcalendar.io/docs/v3/eventResize
+
+https://stackoverflow-com.translate.goog/questions/52150746/bootstrap-select-jquery-plugin-with-bootstrap-4-not-working?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp
+Bootstrap-select jQuery plugin con Bootstrap 4 no funciona
+
+https://jsfiddle-net.translate.goog/w483cygx/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp
+
+05 - Full Calendar, Cambiar de idioma
+https://www.youtube.com/watch?v=FBDJ4_awHS8
+
+
+https://fullcalendar.io/docs/v3/timeFormat
+https://fullcalendar.io/docs/v1/timeFormat
+https://fullcalendar.io/docs/eventTimeFormat
+timeFormat: 'H:mm',
+
+
+Using event.className to change event color for ui-calendar · Issue #176 · angular-ui/ui-calendar · GitHub
+https://github.com/angular-ui/ui-calendar/issues/176
+
+https://codepen.io/sekane81/pen/yLwYrw
+TEXTO QUE PARPADEA
+
+
+COLOR EN FULL CALENDAR
+Using event.className to change event color for ui-calendar #176
+https://github.com/angular-ui/ui-calendar/issues/176
+
+https://getbootstrap.com/docs/5.0/utilities/colors/
+
+
+Event tooltip with eventRender and Boostrap popover
+https://github.com/fullcalendar/fullcalendar-docs/blob/main/_docs-v3/event-display/event-tooltip-demo.html
+
+Event tooltip with eventRender and Tooltip.js
+https://github.com/fullcalendar/fullcalendar-docs/blob/main/_docs-v4/event-display/event-tooltip-demo.html
+
+https://codepen.io/nmwangxin/pen/WNeRQaX
+
+Uncaught ReferenceError: Tooltip is not defined
+https://stackoverflow.com/questions/66653861/uncaught-referenceerror-tooltip-is-not-defined
+If you use bootstrap and Full Calendar v5+, you have to use $().tooltip(options) instead of var tooltip = new Tooltip().
+
+Tooltips
+https://getbootstrap.com/docs/4.6/components/tooltips/#options
+
+Docs Event Display 
+https://fullcalendar.io/docs/event-display
+
+
+var button = ui.button({
+contents: '<i class="fa fa-child"/> Hello',
+container: false,  //add option
+tooltip: 'hello',
+click: function () {
+// invoke insertText method with 'hello' on editor module.
+context.invoke('editor.insertText', 'hello');
+                        }
+                    });
+({ title: lang.specialChar.specialChar || '' })
+https://github.com/summernote/summernote/issues/2740
+
+
+eventRender
+https://fullcalendar.io/docs/v4/eventRender
+
+Event Object 
+https://fullcalendar.io/docs/v4/event-object
+
+How to disable popover when I dragging event?
+https://stackoverflow.com/questions/49571003/how-to-disable-popover-when-i-dragging-event
+
+
+*********************************************
+Multiselect Dropdown With Checkbox In Laravel 
+https://www.nicesnippets.com/blog/multiselect-dropdown-with-checkbox-in-laravel-76
+
+$(...).selectpicker is not a function
+https://stackoverflow.com/questions/43365047/selectpicker-is-not-a-function
+
+Bootstrap 4 multiselect dropdown
+https://stackoverflow.com/questions/50895806/bootstrap-4-multiselect-dropdown
+
+//.append("<div class='col-md-12 mt-2'><div class='form-group'><label class='control-label'>Ejemplo</label><select id='framework' name='name[]' multiple class='form-control'><option value='Codeigniter'>Codeigniter</option><option value='CakePHP'>CakePHP</option></select></div></div>")
+//.append("<div class='col-md-12 mt-2'><div class=''><label class=''>Prueba</label><select class='selectpicker col-md-12' multiple data-live-search='true'><option>Mustard</option><option>Ketchup</option></select></div></div>")
+
+
+bootstrap-select add item and select it
+https://stackoverflow.com/questions/33190697/bootstrap-select-add-item-and-select-it
+$("#myselect").append('<option value="'+newitemnum+'" selected="">'+newitemdesc+'</option>');
+$("#myselect").selectpicker("refresh");
+*********************************************
+
+dhtmlxGantt with PHP: Laravel
+https://docs.dhtmlx.com/gantt/desktop__howtostart_php_laravel.html
+
+setTransactionMode
+https://docs.dhtmlx.com/api__dataprocessor_settransactionmode.html
+
+
+Server-Side Integration
+https://docs.dhtmlx.com/gantt/desktop__server_side.html
+
+
+https://docs.dhtmlx.com/gantt/desktop__colouring_tasks.html
+
+
+addTask
+https://docs.dhtmlx.com/gantt/api__gantt_addtask.html
+
+createTask
+https://docs.dhtmlx.com/gantt/api__gantt_createtask.html
+
+onTaskCreated
+https://docs.dhtmlx.com/gantt/api__gantt_ontaskcreated_event.html
+
+onBeforeLinkAdd
+https://docs.dhtmlx.com/gantt/api__gantt_onbeforelinkadd_event.html
+
+readonly
+https://docs.dhtmlx.com/gantt/api__gantt_readonly_config.html
+
+onBeforeTaskDrag
+https://docs.dhtmlx.com/gantt/api__gantt_onbeforetaskdrag_event.html?_ga=2.181684519.1602350998.1654622912-1437303381.1654622912&_gl=1*vd1kfz*_ga*MTQzNzMwMzM4MS4xNjU0NjIyOTEy*_ga_N87XPB4GSG*MTY1NDYyMjkxMS4xLjEuMTY1NDYyNTczNS4w
+
+onLightboxSave
+https://docs.dhtmlx.com/gantt/api__gantt_onlightboxsave_event.html?_ga=2.243616901.1602350998.1654622912-1437303381.1654622912&_gl=1*1cfveff*_ga*MTQzNzMwMzM4MS4xNjU0NjIyOTEy*_ga_N87XPB4GSG*MTY1NDYyMjkxMS4xLjEuMTY1NDYzMDEwMC4w
+
+onBeforeTaskDelete
+https://docs.dhtmlx.com/gantt/api__gantt_onbeforetaskdelete_event.html
+
+onBeforeLinkDelete
+https://docs.dhtmlx.com/gantt/api__gantt_onbeforelinkdelete_event.html
+
+onBeforeTaskChanged
+https://docs.dhtmlx.com/gantt/api__gantt_onbeforetaskchanged_event.html
+
+*********************************************
+composer require codedge/laravel-fpdf
+composer require mpdf/mpdf (mejor rendimiento archivos largos)
+
+Dompdf
+https://styde.net/genera-pdfs-en-laravel-con-el-componente-dompdf/
+
+*********************************************
+Espere a que una función termine en JavaScript
+https://www.delftstack.com/es/howto/javascript/javascript-wait-for-function-to-finish/#usa-promises-para-esperar-a-que-una-funci%25C3%25B3n-termine-en-javascript
+*********************************************
+
+jquery: uso de .done(), .then() y .when() para realizar solicitudes ajax en un orden determinado
+https://stackoverflow-com.translate.goog/questions/51933513/jquery-usage-of-done-then-and-when-for-making-ajax-requests-in-a-giv?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp
+
+Diferencias entre AJAX anidadas y promises
+https://es.stackoverflow.com/questions/3582/diferencias-entre-ajax-anidadas-y-promises
+
+https://www.w3schools.com/js/js_promise.asp
+JavaScript Promises
+
+https://www.youtube.com/watch?v=rKK1q7nFt7M
+¿Cómo funcionan las Promises y Async/Await en JavaScript? 2022
+
+
+
+*****************************************
+Google Calendar & Laravel
+https://www.youtube.com/watch?v=qLJ17Qho0O4
+
+composer require spatie/laravel-google-calendar
+php artisan vendor:publish --provider="Spatie\GoogleCalendar\GoogleCalendarServiceProvider"
+
+config/google.calendar.php:
+
+'Service_account' => [
+	'credentals_json' => storage_path('app/google-calendar/service-account-credentials.json'),
+],
+
+Para obtener la credencial ir a Google API console
+crear New project
+Google Calendar API -> MANAGE -> ???
+Credentials -> Create credential -> Service Account -> Srvice account details -> dar create (3 pasos)
+
+Credentials -> Service Accounts -> Seleccionar Email -> ADD key -> JSON
+descargar 
+
+copiar en storage/app/google-calendar/serivice-account-credentials.json
+
+en google-calendar.php:
+'calendar_id' => env('GOOGLE_CALENDAR_ID'),
+para esto ir a google->config
+create new calendar
+Settings for my calendar
+seleccionar el calendario->calendar settings->Share with specific people-> add people -> Se pone el client_mail (el cual se saca del archivo json) -> seleccionar permisos
+
+EN Integrate calendar seccion:
+copiar el Calendar ID y pegarlo en el file .env en GOOGLE_CALENDAR_ID=
+
+
+---------------------------------------------------
+web.php
+
+use App\Http\Controllers\BookingController;
+use Spatie\GoogleCalendar\Event;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function() {
+
+	//$event = new Event;
+	
+	//$event->name = 'hola';
+	//$event->startDateTime = Carbon\Carbon::now();
+	//$event->endDateTime = Carbon\Carbon::now()->addHour();
+	
+	//$event->save();
+	
+	$e = Event::get();
+	dd($e);
+	
+	//return view('welcome');
+	
+})
+
+---------------------------------------------------
+
+
+php artisan make:controller BookingController -r
+
+En el controlador BookingController.php:
+public function store(Request $request)
+{
+	$startTime = Carbon::parse($request->input('meeting_date').' ' . $request->input('meeting_time'), 'Asia/Kathmandu');
+	$endTime = (clone $startTime)->addHour();
+	
+	Event::create([
+		'name' => $request->input('name');
+		'startDateTime' => $startTime;
+		'endDateTime' => $endTime;
+	]);
+	
+	return redirect()->back()->withMessage('cita agendada');
+}
+*****************************************
+
+Google Calendar Events to Full Calendar using Google API Key
+https://www.youtube.com/watch?v=KUulNtjYw5I
+
+how to connect google calendar with fullcalendar library
+https://www.youtube.com/watch?v=emhXfvPL-rI
+
+events from Google Calendar 
+https://fullcalendar.io/docs/google-calendar
+
+events from Google Calendar
+https://fullcalendar.io/docs/v3/google-calendar
+
+*****************************************
+
+Integración Google Calendar #1. Configuración API
+https://www.youtube.com/watch?v=xTVTYioADuU
+
+Modifying events with the Google Calendar API
+https://www.youtube.com/watch?v=Qd64idiKZWw
+
+INSERT
+https://developers.google.com/calendar/api/v3/reference/events/insert#http-request
+
+LIST
+https://developers.google.com/calendar/api/v3/reference/events/list
+
+PATCH
+https://developers.google.com/calendar/api/v3/reference/events/patch
+https://stackoverflow.com/questions/74107735/what-parameters-are-required-to-set-google-calender-notification-mint-time
+
+DELETE
+https://developers.google.com/calendar/api/v3/reference/calendars/delete
+https://stackoverflow.com/questions/36961422/deleting-events-in-google-calander-api
+
+
+JS + PHP | Como crear eventos
+https://www.youtube.com/watch?app=desktop&v=5hzgsgPkwFE
+
+*****************************************
+OAuth 2.0
+
+Antipattern: Set a long expiration time for OAuth tokens
+https://cloud.google.com/apigee/docs/api-platform/antipatterns/oauth-long-expiration
+
+OAuthV2 policy
+https://cloud.google.com/apigee/docs/api-platform/reference/policies/oauthv2-policy
+
+Using OAuth 2.0 for Web Server Applications
+https://developers.google.com/identity/protocols/oauth2/web-server#node.js_2
+
+googleapis / google-api-nodejs-client
+https://github.com/googleapis/google-api-nodejs-client
+
+Using the token model
+https://developers.google.com/identity/oauth2/web/guides/use-token-model
+
+Migrate to Google Identity Services
+https://developers.google.com/identity/oauth2/web/guides/migration-to-gis
+
+Send an email with Google Calendar Api
+https://stackoverflow.com/questions/45971509/send-an-email-with-google-calendar-api
+
+Create events
+https://developers.google.com/calendar/api/guides/create-events
+
+Crea y administra claves de cuentas de servicio
+https://cloud.google.com/iam/docs/creating-managing-service-account-keys?hl=es-419
+https://cloud.google.com/iam/docs/creating-managing-service-account-keys
+
+googleapis / google-api-php-client
+https://github.com/googleapis/google-api-php-client
+
+adding an event to google calendar using php
+https://stackoverflow.com/questions/50656151/adding-an-event-to-google-calendar-using-php
+
+How to insert event to user google calendar using php?
+https://stackoverflow.com/questions/34541009/how-to-insert-event-to-user-google-calendar-using-php
+
+Create events
+https://developers.google.com/calendar/api/guides/create-events#php
+
+Google Calendar How to fix "You need to have writer access to this calendar"?
+https://stackoverflow.com/questions/55398300/google-calendar-how-to-fix-you-need-to-have-writer-access-to-this-calendar
+
+
+Send an email with Google Calendar Api
+https://stackoverflow.com/questions/45971509/send-an-email-with-google-calendar-api
+
+
+Google_Client 
+https://googleapis.github.io/google-api-php-client/v2.7.1/Google_Client.html
+
+
+Insert multiple calendar.events in google calendar(API)
+https://stackoverflow.com/questions/50467303/insert-multiple-calendar-events-in-google-calendarapi
+
+Usa el modelo de token 
+https://developers.google.com/identity/oauth2/web/guides/use-token-model?hl=es-419
+
+Google Calendar API Usage
+https://www.youtube.com/watch?v=zB3v0OgqiDY
+
+Any way of capturing the users response like accept/reject to a calendar invitation?
+https://stackoverflow.com/questions/69459256/any-way-of-capturing-the-users-response-like-accept-reject-to-a-calendar-invitat
+
+Using Google Calendar API, is there a way to get and store the attendees response?
+https://stackoverflow.com/questions/55590385/using-google-calendar-api-is-there-a-way-to-get-and-store-the-attendees-respons
+
+Events: Import
+https://developers.google.com/calendar/api/v3/reference/events/import?hl=es-419
+
+Events
+https://developers.google.com/calendar/api/v3/reference/events?hl=es-419
+
+Events: insert
+https://developers.google.com/calendar/api/v3/reference/events/insert?hl=es-419
+
+Crear eventos
+https://developers.google.com/calendar/api/guides/create-events?hl=es-419#javascript
+
+554 5.7.1: Recipient address rejected:STMP AUTH is required for users under sender domain google calendar
+https://developers.google.com/identity/oauth2/web/guides/use-token-model?hl=es-419
+https://developers.google.com/calendar/api/v3/reference/events/insert?hl=es-419
+https://cloud.google.com/identity/docs/how-to/setup-user-invitations?hl=es-419
+
+
+
+*****************************************
+
+¿Cómo crear un array con índice dinámico?
+https://es.stackoverflow.com/questions/91556/c%C3%B3mo-crear-un-array-con-%C3%ADndice-din%C3%A1mico
+
+5 formas de crear objetos en JavaScript
+https://www.deustoformacion.com/blog/programacion-tic/5-formas-crear-objetos-javascript
+
+
+
+JavaScript Array Distinct
+https://codeburst.io/javascript-array-distinct-5edc93501dc4
+
+ES6 map an array of objects, to return an array of objects with new keys [duplicate]
+https://stackoverflow.com/questions/40348171/es6-map-an-array-of-objects-to-return-an-array-of-objects-with-new-keys
+
+How to create an array of unique values in JavaScript using Sets 
+https://dev.to/clairecodes/how-to-create-an-array-of-unique-values-in-javascript-using-sets-5dg6
+
+
+¿como hacer push array dentro de un objeto que esta en un array?
+https://es.stackoverflow.com/questions/95954/como-hacer-push-array-dentro-de-un-objeto-que-esta-en-un-array
+preguntas.push({idp: 1, preg: "¿Que dia es hoy?"});
+
+*****************************************
+What is Map.has() function in Javascript?
+https://www.educative.io/answers/what-is-maphas-function-in-javascript
+
+Map.prototype.has()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has
+
+Use variable outside the success function from an ajax/jquery call
+https://stackoverflow.com/questions/5935968/use-variable-outside-the-success-function-from-an-ajax-jquery-call
+
+5 maneras de iterar un objeto en JavaScript 
+https://dev.to/duxtech/5-maneras-de-iterar-un-objeto-en-javascript-jkn
+
+const obj = Object.fromEntries(entries);
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
+
+Object.entries()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+
+How to Use forEach() with Key Value Pairs
+https://masteringjs.io/tutorials/fundamentals/foreach-key-value
+
+¿Como buscar valores en un objeto en javascript?
+https://es.stackoverflow.com/questions/215366/como-buscar-valores-en-un-objeto-en-javascript
+
+Cuatro maneras diferentes de buscar dentro de un arreglo en JavaScript
+https://www.freecodecamp.org/espanol/news/cuatro-maneras-diferentes-de-buscar/
+
+Javascript map array of objects to another array of objects
+https://bushansirgur.in/javascript-map-array-of-objects-to-another-array-of-objects/
+
+using .includes with .map to find matching values
+https://stackoverflow.com/questions/51557853/using-includes-with-map-to-find-matching-values
+
+*****************************************
+
+Store JSON object in data attribute in HTML jQuery
+https://exchangetuts.com/store-json-object-in-data-attribute-in-html-jquery-1639490884650595
+
+var gridHtml = '<div data-dataObj=\''+JSON.stringify(dataObj).replace(/'/g, "\\'");+'\'></div>';
+
+
+*****************************************
+The attr() and data() Methods
+https://www.w3docs.com/snippets/javascript/how-to-get-the-data-id-attribute.html
+
+
+selectpicker : Get the data attribute of selected option
+https://stackoverflow.com/questions/48951314/selectpicker-get-the-data-attribute-of-selected-option
+$('.selectpicker').on("changed.bs.select", function() {
+    var dataTypeAttribute = $('option:selected', this).attr("data-type");
+});
+*****************************************
+NumberFormatter::formatCurrency
+numfmt_format_currency
+https://www.php.net/manual/en/numberformatter.formatcurrency.php
+
+
+ISO 4217
+MXN 	484 	2 	Peso mexicano 	Flag of Mexico.svg México
+MXV 	979 	2 	Unidad de Inversión (UDI) mexicana 	Flag of Mexico.svg México
+https://es.wikipedia.org/wiki/ISO_4217
+
+
+How to get the locale for a specified currency?
+es_MX - MXN 
+https://stackoverflow.com/questions/29198907/how-to-get-the-locale-for-a-specified-currency
+
+*****************************************
+PHP explode() Function
+https://www.w3schools.com/php/func_string_explode.asp
+
+explode(" ",$str)
+
+
+*****************************************
+
+           
+var $radios = $('input:radio[name=tipo_de_enfoque1]');
+if($radios.is(':checked') === true) {
+  console.log('$radios');
+  console.log($radios);
+}
+
+*****************************************
+
+(new notificaciones_controller)->nueva_notificacion($detalles,10(modulo),3(id_tipo_noti),Auth::user()->id,NULL);
+             
+*****************************************
+
+Tab references
+https://www.w3schools.com/bootstrap/bootstrap_ref_js_tab.asp
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_tab_events2&stacked=h
+
+*****************************************
+
+<div class="col-xs-12 text-center" style="background-color:#492779">
+	<h3 style="color:#FFFFFF">COSTO</h3>
+</div>
+        
+*****************************************    
+FONTS
+
+font-weight: 100;
+font-size: 18px;
+
+p.normal {
+  font-weight: normal;
+}
+
+
+*****************************************
+//require_once __DIR__ . '/bootstrap.php';
+
+*****************************************  
+
+
+Font size conversion: pixel-point-em-rem-percent
+
+https://websemantics.uk/tools/font-size-conversion-pixel-point-em-rem-percent/          
+            
+*****************************************  
+
+
+*****************************************  
+
+$('#participante_seleccionado_grupal').empty();
+
+$( "#participante_individual" ).hide();
+$( "#participante_grupal" ).show();
+
+$( "#participante_grupal" ).hide();
+$( "#participante_individual" ).show();
+
+
+$("#participante_seleccionado_grupal").append(options);
+$("#participante_seleccionado_grupal").selectpicker("refresh");
+                
+*****************************************  
+
+How to refresh gitignore
+https://sigalambigha.home.blog/2020/03/11/how-to-refresh-gitignore/
+
+*****************************************  
+
+https://parzibyte.me/blog/2018/11/08/crear-archivo-excel-php-phpspreadsheet/
+
+Crear archivo de Excel con PHP y PHPSpreadsheet
+
+PhpOffice\PhpSpreadsheet\Spreadsheet
+
+Cómo exportar registros por fecha en múltiples hojas | Laravel Excel
+https://www.youtube.com/watch?v=FZZGJ8-0EzU&list=PLpKWS6gp0jd94FmdRdkZ3QtaItMNLCGbk&index=4
+
+https://www.youtube.com/watch?v=hhJ5Du_l-bE&list=PLpKWS6gp0jd94FmdRdkZ3QtaItMNLCGbk&index=2
+
+php artisan make:export Lista_ClientesExport --model=App\Models\Persona
+
+use Maatwebsite\Excel\Concerns\WithMultipleSheets;
+
+public function sheets(): array
+{
+ $sheets = [];
+ 
+ foreach(range(1, 12) as $month){
+ 	$sheets[] = new UsersPerMonthShhet($this->year, $month);
+ }
+ 
+ return $sheets;
+ 
+}
+
+php artisan make:export Sheets/UserPerMonthShhet
+
+php artisan make:export Sheets/ProspectoContactoSheet
+php artisan make:export Sheets/ProspectoUsuarioSheet
+
+*****************************************  
+
+Como restar entre 2 horas en PHP
+https://es.stackoverflow.com/questions/177803/como-restar-entre-2-horas-en-php
+
+La clase DateInterval 
+https://www.php.net/manual/es/class.dateinterval.php#dateinterval.props.h
+
+
+Get Day Name From Date In PHP
+https://www.scratchcode.io/php-get-day-name-from-date/
+
+Show working days of a month excluding weekends with PHP
+https://dcblog.dev/show-working-days-of-a-month-excluding-weekends-with-php
+*****************************************  
+
+
+***************************************** 
+change input event doesn't work jquery
+
+$("#my_input").on("change paste keyup", function() {
+jQuery change event not firing for input field
+https://stackoverflow.com/questions/28902329/jquery-change-event-not-firing-for-input-field
+
+jQuery Change Event: Proper Binding
+https://gist.github.com/brandonaaskov/1596867
+$('#search-form .term').bind('input', function(){
+***************************************** 
+
+disabled 
+
+
+        $('#fecha_inicio').attr('disabled', true);
+        $('#fecha_fin').prop('disabled', true);
+        $('#url').attr("disabled", 'disabled');
+        
+        
+How to enable/disable bootstrap selectpicker by ickeck checkbox        
+https://stackoverflow.com/questions/27317296/how-to-enable-disable-bootstrap-selectpicker-by-ickeck-checkbox
+
+jQuery .attr("disabled", "disabled") not working in Chrome
+https://stackoverflow.com/questions/6048022/jquery-attrdisabled-disabled-not-working-in-chrome
+
+***************************************** 
+
+Archivos 
+
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\File;
+
+File::delete('storage/' . $imagen);
+File::delete( 'storage/vacantes/' . $imagen );
+
+Storage::delete()
+
+
+$imagen = $request->file('file'); // EN curso DOMINANDO LARAVEL CAP 42
+$nombreImagen = time() . '.' . $imagen->extension();
+$imagen->move(public_path('storage/vacantes'), $nombreImagen);
+
+
+if( File::exists( 'storage/vacantes/' . $imagen ) ) {
+    File::delete( 'storage/vacantes/' . $imagen );
+}
+
+if( File::exists( 'storage/docPreinversion/' . $documento ) ) {
+                File::delete( 'storage/docPreinversion/' . $documento );
+ }               
+
+$archivo->move($ubicacion, $nombreArchivo);
+$documento->storeAs('public/notas/cotizacion/'.$id_cotizacion, $nombreArchivo);
+
+fill()
+
+***************************************** 
+
+
+Agregar nuevos sitios a Laravel Homestead
+https://styde.net/agregar-nuevos-sitios-a-laravel-homestead/
+Homestead desde la consola (cd ~/Homestead) y ejecutar vagrant reload —provision
+
+***************************************** 
+COLOCAR IMAGEN EN CORREO
+<img src="data:image/png;base64,{{base64_encode(file_get_contents(resource_path('img/email/logo.png')))}}" alt="">
+***************************************** 
+
+unbind()
+
+Button appending duplicate data to div on successive click events
+https://stackoverflow.com/questions/63041232/button-appending-duplicate-data-to-div-on-successive-click-events
+
+***************************************** 
+
+
+***************************************** 
+WORKSPACE GOOGLE 
+¿Cómo crear una cuenta en Google Workspace (antes Gsuite)? Paso a Paso
+https://www.youtube.com/watch?v=n-KPjXOkgmk
+
+Gestión de usuarios en Google Workspace
+https://www.youtube.com/watch?v=6ya2uBMHpQ0
+
+¿Cómo crear un nuevo usuario en Google Workspace?
+https://www.youtube.com/watch?v=xkhFAcgidHU
+
+Tutorial de Google Workspace (2022) - Configura El Correo De Tu Empresa
+https://www.youtube.com/watch?v=7vRIIADPOFw
+
+Ahorrar dinero en Google Workspace: usa cuentas, ALIAS, GRUPOS y alias de dominios.
+https://www.youtube.com/watch?v=aLAuj-qLezs
+
+Como agregar EMAIL ALIAS en Google Workspace (G SUITE) y configurarlo para enviar como (send as)
+https://www.youtube.com/watch?v=ytG8seNtt-M
+***************************************** 
+
+How to date sort as date instea
+https://datatables.net/forums/discussion/45692/how-to-date-sort-as-date-instead-of-string
+
+https://codepen.io/arnulfolg/pen/MebVgx
+
+***************************************** 
+
+datetime-moment.js
+https://datatables.net/plug-ins/sorting/datetime-moment#CDN
+https://datatables.net/forums/discussion/72106/how-do-i-load-and-or-download-sorting-datetime-moment-js
+
+TypeError: $.fn.dataTable.moment is not a function
+https://stackoverflow.com/questions/37118273/typeerror-fn-datatable-moment-is-not-a-function
+
+Order table by “date” with plugin DATATABLES
+https://discourse.cakephp.org/t/order-table-by-date-with-plugin-datatables/489
+
+Default ordering (sorting)
+https://datatables.net/examples/basic_init/table_sorting.html
+
+
+
+"<?php echo date("Y-m-d H:i", strtotime($date)); ?>"
+<?php echo date("H:i d-m-Y", strtotime($date)); ?>
+
+
+<td data-order="<?php echo date("Y-m-d", strtotime($fecha_creado_subs)); ?>"><?php echo date("d/m/Y", strtotime($fecha_creado_subs)); ?></td>
+***************************************** 
+
+How to set the foreign key name in php laravel?
+https://stackoverflow.com/questions/66744962/how-to-set-the-foreign-key-name-in-php-laravel
+
