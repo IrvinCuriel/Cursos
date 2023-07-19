@@ -1,0 +1,147 @@
+Vagrant
+https://www.vagrantup.com/
+
+Git
+https://git-scm.com/
+
+VirtualBox
+https://www.virtualbox.org/
+C:\Program Files\Oracle\VirtualBox
+
+php
+https://www.php.net/downloads.php
+https://windows.php.net/download#php-8.1
+descargar zip
+extraer en archivos de programa y dar de alta en variables de entorno
+C:\Program Files\php-8.1.21
+php -v
+
+Composer
+https://getcomposer.org/download/
+requires that you have PHP already installed 
+composer --version
+C:\Users\Administrador\AppData\Roaming\Composer\vendor\bin
+
+vagrant --version
+vboxmanage --version
+
+Editar variables de entorno de esta cuenta.
+Variables de entorno
+Agregar varibale de etorno editando sobre path
+C:\Program Files\Oracle\VirtualBox
+C:\Program Files\php-8.1.21
+C:\Users\Administrador\AppData\Roaming\Composer\vendor\bin
+
+vagrant box add laravel/homestead
+3
+
+https://developer.hashicorp.com/vagrant/docs/cli/box
+vagrant box list
+
+cd .vagrant.d/
+ls
+boxes/  data/  gems/  insecure_private_key  rgloader/  setup_version  tmp/
+cd boxes/
+laravel-VAGRANTSLASH-homestead/
+
+clonar homestead e C
+git clone https://github.com/laravel/homestead.git Homestead
+
+cd Homestead/
+
+Vagrantfile
+
+entrar a carpeta Homestead-> dar doble click en init batch
+
+Homestead.yaml
+ip: "192.168.56.56"
+
+
+En otra terminal 
+cd .ssh/
+ssh-keygen -t rsa -b 4096 -C "correo@correo.com"
+
+Generate a ssh key ssh-keygen -t rsa -b 4096 -C "acoirvin@gmail.com"
+Start ssh agent eval "$(ssh-agent -s)"
+Add your SSH private key to the ssh-agent ssh-add -k ~/.ssh/id_rsa
+Then run vagrant up
+
+
+
+
+ir a C
+cd C:
+laravel-apps
+
+en Homestead.yaml
+folders:
+    - map: C:\laravel-apps
+      to: /home/vagrant/code
+
+sites:
+    - map: laravelwindows.app
+      to: /home/vagrant/code/laravel-windows/public
+
+
+
+https://laravel.com/docs/7.x/installation
+C:\Users\Administrador\AppData\Roaming\Composer\vendor\bin
+composer global require laravel/installer
+
+cd C:
+cd laravel-apps/
+laravel new laravelwindows
+composer create-project --prefer-dist laravel/laravel:^7.0 laravelwindows --ignore-platform-req=ext-fileinfo
+composer create-project laravel/laravel=^7 laravelwindows --prefer-dist
+
+This PC / Local Disk (C:) / Windows / System43 / drivers /etc
+192.168.56.56 laravelwindows.app
+
+
+********************************************************************************************************************
+Instalar Apache
+https://www.apachelounge.com/download/
+https://learn.microsoft.com/es-es/cpp/windows/latest-supported-vc-redist?view=msvc-170
+
+
+mover Apache24 a C: y cambiar nombre a apache
+en apache->conf->httpd.conf cambiar variabes:
+Define SRVROOT "c:/apache"
+ServerName localhost
+
+shell
+cd ..
+cd ..
+cd .\apache\
+cd bin
+.\httpd.exe
+localhost ---< it works!
+ctrl c detener
+
+apache->htdocs
+
+ejecutar PowerShell como asministrador
+cd ..
+cd ..
+cd .\apache\
+cd bin
+.\httpd.exe -k install  // como servicio
+
+Panel de control->Herramientas administrativas->Servicios->Apache2.4->iniciar servicio
+
+.\httpd.exe -k unistall
+
+
+https://gist.github.com/codigoconjuan/deeb683d13e08c75111b83b625a8e3c9
+https://www.php.net/
+thread safe
+
+apache->conf->httpd.conf cambiar variabes:
+LoadModule php_module "C:/php-8.2.8/php8apache2_4.dll"
+AddHandler application/x-httpd-php .php
+PHPIniDir "C:/php-8.2.8"
+
+generar php.ini de de producción y cofigurar
+
+https://dev.mysql.com/downloads/mysql/
+
