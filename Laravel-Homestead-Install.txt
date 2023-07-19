@@ -145,3 +145,5 @@ generar php.ini de de producción y cofigurar
 
 https://dev.mysql.com/downloads/mysql/
 
+
+https://stackoverflow.com/questions/41274829/php-error-the-zip-extension-and-unzip-command-are-both-missing-skipping
